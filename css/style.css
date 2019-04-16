@@ -1,0 +1,41 @@
+@charset "UTF-8";
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* header */
+header {
+    display: flex;
+}
+header h1 {
+    margin: 0 0 0 0;
+}
+header nav {
+    margin: 0 0 0 auto;
+}
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+header nav ul li {
+    padding: 0 10px;
+}
+/* footer */
+footer {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    background-color: #fc9d31;
+}
+footer p {
+    text-align: center;
+}
+/* main */
+.home .visual p {
+    background: url(../image/top.jpg) no-repeat center top;
+    width: 100%;
+    height: 0;
+    padding-top: calc(300 / 1000 * 100%);
+    box-sizing: border-box;
+}
