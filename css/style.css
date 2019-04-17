@@ -33,9 +33,17 @@ footer p {
 }
 /* main */
 .home .visual p {
-    background: url(../image/top.jpg) no-repeat center top;
-    width: 100%;
-    height: 0;
+    background: url(../image/top.jpg) no-repeat center top/cover;
     padding-top: calc(300 / 1000 * 100%);
     box-sizing: border-box;
+}
+.home section {
+    display: flex;
+    margin: 50px;
+}
+.home section div p {
+    margin: 0 0 0 20px;
+}
+.home section img {
+    margin: 0 0 0 50px;
 }
