@@ -1,49 +1,109 @@
 @charset "UTF-8";
-body {
+* {
     margin: 0;
     padding: 0;
 }
-
-
-/* header */
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 16px;
+    font-size: 1.6rem;/* 16px*/
+}
+h1 {
+    font-size: 36px;/* IE8以下とAndroid4.3以下用フォールバック */
+    font-size: calc(2.4rem + ((1vw - 0.64rem) * 2.1429));/* 24px~36pxで可変*/
+}
+h2 {
+    font-size: 24px;/* IE8以下とAndroid4.3以下用フォールバック */
+    font-size: calc(2rem + ((1vw - 0.64rem) * 0.7143));/* 20px~24pxで可変*/
+}
 header {
     display: flex;
 }
-header h1 {
-    margin: 0 0 0 0;
-}
-header nav {
-    margin: 0 0 0 auto;
+header h1 a:link,
+header h1 a:visited {
+    text-decoration: none;
+    color: #000;
 }
 header nav ul {
     display: flex;
     list-style-type: none;
 }
-header nav ul li {
-    padding: 0 10px;
-}
-/* footer */
-footer {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    background-color: #fc9d31;
-}
-footer p {
-    text-align: center;
-}
+
+@media screen and (max-width:480px){
+    /*画面幅が480pxまでの時*/
+    /* header */
+    header h1 {
+        margin: 2vh 0 0 3vw;
+    }
+    header nav {
+        margin: 3vh 2vw 0 auto;
+        font-size: 1.2vw;
+    }
+    header nav ul li {
+        padding: 0 2vw;
+    }
+    header nav ul li img {
+        width: 4vw;
+    }
+
 /* main */
-.home .visual p {
+.home main {
+    background-color: #eee;
+}
+.home .visual {
     background: url(../image/top.jpg) no-repeat center top/cover;
-    padding-top: calc(300 / 1000 * 100%);
+    height: 80vh;
+    padding: 33vh 5vw 0;
     box-sizing: border-box;
 }
+.home .visual p {
+    color: #ff22dd;
+    font-size: 4em;
+    font-style: italic;
+    font-weight: 900;
+}
+.home .inner {
+    margin: 0 5vw;
+    background-color: #fff;
+    padding: 4vh;
+}
+.home .inner .border {
+    border-bottom: #000 medium solid;
+    margin: 0 0 20px 0;
+}
+
 .home section {
     display: flex;
-    margin: 50px;
+    margin: 3vw 0 0 0;
+}
+
+.home section div {
+    width: 50vw;
 }
 .home section div p {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 2em;
 }
 .home section img {
+    width: 20vw;
+    height: 50vh;
     margin: 0 0 0 50px;
 }
+
+
+/* footer */
+footer {
+    background-color: #fc9d31;
+    text-align: center;
+}
+
+}
+@media screen and (min-width:781px){
+      /*画面幅が781px以上の時*/
+}
+    
+
+
+
+
