@@ -1,22 +1,29 @@
 @charset "UTF-8";
+/* リセットCSS */
 * {
     margin: 0;
     padding: 0;
 }
+/* 全ページ共通 */
 html {
     font-size: 62.5%;
 }
 body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     font-size: 16px;
     font-size: 1.6rem;/* 16px*/
 }
 h1 {
     font-size: 36px;/* IE8以下とAndroid4.3以下用フォールバック */
-    font-size: calc(2.4rem + ((1vw - 0.64rem) * 2.1429));/* 24px~36pxで可変*/
+    font-size: 5vw;
 }
 h2 {
     font-size: 24px;/* IE8以下とAndroid4.3以下用フォールバック */
-    font-size: calc(2rem + ((1vw - 0.64rem) * 0.7143));/* 20px~24pxで可変*/
+    font-size: 4vw;
+}
+p {
+    font-size: 3vw;
+    line-height: 1.8;
 }
 header {
     display: flex;
@@ -30,77 +37,128 @@ header nav ul {
     display: flex;
     list-style-type: none;
 }
-
-@media screen and (max-width:480px){
-    /*画面幅が480pxまでの時*/
-    /* header */
-    header h1 {
-        margin: 2vh 0 0 3vw;
-    }
-    header nav {
-        margin: 3vh 2vw 0 auto;
-        font-size: 1.2vw;
-    }
-    header nav ul li {
-        padding: 0 2vw;
-    }
-    header nav ul li img {
-        width: 4vw;
-    }
-
 /* main */
-.home main {
-    background-color: #eee;
-}
-.home .visual {
-    background: url(../image/top.jpg) no-repeat center top/cover;
-    height: 80vh;
-    padding: 33vh 5vw 0;
-    box-sizing: border-box;
-}
 .home .visual p {
     color: #ff22dd;
-    font-size: 4em;
     font-style: italic;
     font-weight: 900;
+    text-shadow: 2px 2px 3px #fff;
 }
-.home .inner {
-    margin: 0 5vw;
-    background-color: #fff;
-    padding: 4vh;
-}
-.home .inner .border {
-    border-bottom: #000 medium solid;
-    margin: 0 0 20px 0;
-}
-
-.home section {
-    display: flex;
-    margin: 3vw 0 0 0;
-}
-
-.home section div {
-    width: 50vw;
-}
-.home section div p {
-    margin: 0 0 0 2em;
-}
-.home section img {
-    width: 20vw;
-    height: 50vh;
-    margin: 0 0 0 50px;
-}
-
-
 /* footer */
 footer {
     background-color: #fc9d31;
     text-align: center;
 }
-
+@media screen and (max-width:1024px) {
+/*画面幅が1024pxまでの時*/
+    /* header */
+    header h1 {
+        margin: 2vh 0 0.5vh 3vw;
+    }
+    header nav {
+        margin: 3vh 2vw 0 auto;
+        font-size: 3vw;
+    }
+    header nav ul li {
+        padding: 0 2vw;
+    }
+    header nav ul li img {
+        width: 4.5vw;
+    }
+    /* main */
+    .home .visual {
+        background: url(../image/top.JPG) no-repeat center top;
+        width: 100%;
+        padding-top: 60%;
+        background-size: 100% auto;
+    }
+    .home .visual p {
+        margin: -38% 0 0 5%;
+        font-size: 6vw;
+    }
+    .home .inner {
+        margin: 2vh 7vw;
+    }
+    .home .inner h1 {
+        text-align: center;
+    }
+    .home .inner .border {
+        border-bottom: #e5f medium solid;
+        margin: 3vh 0 1vh 0;
+    }
+    .home .inner img {
+        width: 40%;
+        height: auto;
+        padding: 3vw 30% 10% 30%;
+    }
 }
-@media screen and (min-width:781px){
-      /*画面幅が781px以上の時*/
+@media screen and (min-width:1025px){
+/*画面幅が1025px以上の時*/
+    /* header */
+    .home header h1 {
+        margin: 1vh 2vw;
+        font-size: 3vw;
+    }
+    .home header nav {
+        margin: 3vh 1vw 0 auto;
+        padding-right: 2vw;
+        font-size: 1.5vw;
+    }
+    .home header nav li {
+        padding-right: 2vw;
+    }
+    .home header nav li img {
+        width: 2vw;
+    }
+    /* main */
+    .home main {
+        background-color: #eee;
+    }
+    .home main .visual {
+        background: url(../image/top.JPG) no-repeat center top;
+        width: 100%;
+        padding-top: 53%;
+        background-size: 100% auto;
+    }
+    .home main .visual p {
+        margin-top: -33%;
+        padding-left: 5vw;
+        font-size: 5vw;
+    }
+    .home main .inner {
+        background-color: #fff;
+        margin: 0 5vw;
+        padding: 4vh;
+    }
+    .home main .inner h1 {
+        font-size: 3vw;
+        margin-bottom: 4vh;
+    }
+    .home main .inner section {
+        padding: 0 5%;
+        display: flex;
+        margin-bottom: 5vh;
+    }
+    .home main .inner section div {
+        width: 65%;
+    }
+    .home main .inner section div .border {
+        font-size: 2.5vw;
+        border-bottom: #e5f solid 5px;
+        margin: 0 0 1.5vh 0;
+    }
+    .home main .inner section div p {
+        font-size: 1.5vw;
+    }
+    .home main .inner img {
+        width: 20vw;
+        height: auto;
+        padding: 10vh 0 0 5vw;
+    }
+    /* footer */
+    footer p {
+        font-size: 1vw;
+    }
 }
     
 
