@@ -37,6 +37,17 @@ header nav ul {
     display: flex;
     list-style-type: none;
 }
+header nav ul a:link,
+header nav ul a:visited {
+    text-decoration: none;
+    color: #9f00ca;
+}
+header nav ul a:hover {
+    color: #a977cf;
+}
+header nav ul a:hover img {
+    opacity: 0.5;
+}
 /* main */
 .home .visual p {
     color: #ff22dd;
@@ -49,6 +60,23 @@ footer {
     background-color: #fc9d31;
     text-align: center;
 }
+
+/* list */
+main .list {
+    background-color: #fc9d31;
+}
+main .list ol {
+    list-style-type: none;
+    display: flex;
+}
+main .list ol li::after {
+    content: '>';
+    padding: 0 10px
+}
+main .list ol li:last-child::after {
+    content: none;
+}
+
 @media screen and (max-width:1024px) {
 /*画面幅が1024pxまでの時*/
     /* header */
@@ -64,6 +92,11 @@ footer {
     }
     header nav ul li img {
         width: 4.5vw;
+    }
+    /* list */
+    main .list ol {
+        padding: 1vh 4vw;
+        font-size: 3vw;
     }
     /* main */
     .home .visual {
@@ -91,24 +124,89 @@ footer {
         height: auto;
         padding: 3vw 30% 10% 30%;
     }
+    /* About meページ */
+    .introduction main .bio {
+        margin: 2vh 2vw;
+    }
+    .introduction main .bio h1 {
+        text-align: center;
+        padding-bottom: 1vh;
+        margin-bottom: 2vh; 
+        border-bottom: #fecd31 dotted 3px;
+    }
+    .introduction main .bio .flex .left-side .phote {
+        text-align: center;
+        margin-bottom: 2vh;
+    }
+    .introduction main .bio .flex .left-side .phote img {
+        width: 50vw;
+        border-radius: 50%;
+        border: black 1px solid;
+    }
+    .introduction main .bio .flex .left-side .name {
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+    .introduction main .bio .flex .left-side .name .style {
+        padding-left: 2vw;
+        font-style: italic;
+    }
+    .introduction main .bio .flex .left-side h2 {
+        text-align: center;
+    }
+    .introduction main .bio .flex .left-side ul {
+        text-align: center;
+        font-size: 3.5vw;
+        line-height: 1.5em;
+        margin-bottom: 2vh;
+    }
+    .introduction main .bio .flex .right-side {
+        padding: 0 3vw;
+    }
+    .introduction main .bio .flex .right-side h2 {
+        border-bottom: #888 dotted 1px;
+        margin: 2vh 0;
+    }
+    .introduction main .bio .flex .right-side dl {
+        font-size: 3.5vw;
+        line-height: 2.5em;
+    }
+    .introduction main .bio .flex .right-side dl dt {
+        float: left;
+        /* clear: both; */
+        margin-right: 3vw;
+        padding-left: 5vw;
+        color: #998484;
+    }
+    .introduction main .bio .flex .right-side dl dd {
+        padding-left: 25vw; 
+    }
+    .introduction main .bio .flex .right-side p {
+        padding: 0 7vw;
+    }
 }
+
 @media screen and (min-width:1025px){
 /*画面幅が1025px以上の時*/
     /* header */
-    .home header h1 {
+    header h1 {
         margin: 1vh 2vw;
         font-size: 3vw;
     }
-    .home header nav {
-        margin: 3vh 1vw 0 auto;
+    header nav {
+        margin: 4vh 1vw 0 auto;
         padding-right: 2vw;
         font-size: 1.5vw;
     }
-    .home header nav li {
+    header nav li {
         padding-right: 2vw;
     }
-    .home header nav li img {
+    header nav li img {
         width: 2vw;
+    }
+    /* list */
+    main .list ol {
+        padding: 1vh 3vw;
     }
     /* main */
     .home main {
@@ -159,6 +257,77 @@ footer {
     footer p {
         font-size: 1vw;
     }
+    /* About meページ */
+    .introduction main {
+        background-color: #eee;
+    }
+    .introduction main .bio {
+        margin: 0 5vw;
+        padding: 4vh 8vw;
+        background-color: #fff;
+    }
+    .introduction main .bio h1 {
+        /* padding-bottom: 1vh;
+        margin-bottom: 2vh; */
+        font-size: 3vw;
+    }
+    .introduction main .bio .flex {
+        display: flex;
+        margin-top: 5vh;
+    }
+    .introduction main .bio .flex .left-side .phote img {
+        /* margin: 6vh; */
+        width: 20vw;
+        /* border-radius: 50%; */
+        border: black 1px solid;
+    }
+    .introduction main .bio .flex .left-side .name {
+        margin: 3vh 0;
+        font-size: 2vw;
+    }
+    .introduction main .bio .flex .left-side .name .style {
+        padding-left: 4vw;
+        font-style: italic;
+    }
+    .introduction main .bio .flex .left-side h2 {
+        font-size: 2vw;
+        border-bottom: #888 1px dotted;
+    }
+    .introduction main .bio .flex .left-side ul {
+        font-size: 1.6vw;
+        color:#439;
+        line-height: 1.8em;
+        margin: 2vh 0;
+        list-style-type: none;
+    }
+    .introduction main .bio .flex .right-side {
+        padding-left: 10vw;
+    }
+    .introduction main .bio .flex .right-side h2 {
+        border-bottom: #888 dotted 1px;
+        font-size: 2vw;
+    }
+    .introduction main .bio .flex .right-side dl {
+        margin-bottom: 10vh;
+        padding-top: 1vh;
+        font-size: 2vw;
+        line-height: 2em;
+    }
+    .introduction main .bio .flex .right-side dl dt {
+        float: left;
+        clear: both;
+        color: #998484;
+    }
+    .introduction main .bio .flex .right-side dl dd {
+        padding-left: 10vw;
+    }
+    .introduction main .bio .flex .right-side p {
+        padding-top: 2vh;
+        font-size: 1.5vw;
+    }
+
+
+
 }
     
 
